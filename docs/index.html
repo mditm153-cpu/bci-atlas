@@ -1,9 +1,11 @@
 
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>BCI ATLAS | CAN SLIM 시장 관제</title><link rel="stylesheet" href="./assets/atlas.css"></head><body><main class="wrap"><header class="top"><div><div class="eyebrow">BCIP · BUSINESS COMPANION INVESTMENT PARTNER</div><h1>CAN SLIM 종합 상황판</h1><div class="intro">기업 성장성과 코스피·코스닥 시장 추세를 한 화면에서 점검합니다. FTD 발생 전에는 미래 조건만, 발생 후에는 확인 기록을 표시합니다.</div></div><div class="buttons"><a class="btn ghost" href="./m_research.html">FTD·분산일 연구</a><button class="btn" type="button" id="updateNow">시장 빠른 갱신 · KRX/RS/M</button><button class="btn ghost" type="button" id="caNow">재무 C/A 갱신 · 이어받기</button><button class="btn ghost" type="button" id="reload">화면 새로고침</button><a class="btn ghost" href="/admin">관리자</a></div></header><div id="navigation"></div><p><a class="btn" href="./rs_line.html">종목별 최근 1년 주가 · 거래량 · RS선 확인하기</a></p><div id="refreshPanel" class="panel bci-freshness"><div class="section-row"><b>데이터 기준일 · 수집 상태</b><span id="localClock" class="small">한국 시간 확인 중</span></div><div class="bci-dates" id="freshDates"></div><div class="small" id="refreshStatus" role="status" aria-live="polite">이 화면은 마지막 확정 일봉으로 표시됩니다. 장중 자료는 확정값으로 사용하지 않습니다.</div></div><div id="warning" class="warning compact" role="status">시장·기업 데이터를 읽고 있습니다.</div><section><div class="section-row"><h2>M · 시장 방향 — 코스피와 코스닥</h2><a href="./m.html">상세 시장 관제 보기</a></div><div id="markets" class="marketgrid"></div><div id="mquality" class="mquality"></div><p class="small" id="mnote"></p></section><section class="blockgap"><div class="section-row"><h2>CAN SLIM 7개 항목</h2><span class="small">각 항목을 누르면 전체 기업의 해당 근거를 조회합니다.</span></div><div id="modules" class="modulegrid"></div></section><section class="blockgap panel"><div class="section-row"><h2>C·A·N 기업 관찰 요약</h2><a href="./matrix.html">2,675개 기업 조건표</a></div><div id="counts" class="kpi"></div><p class="small">C·A는 DART 정량 기준, N은 긍정 공시 제목 후보에 관한 BCI 간편 기준입니다. S·L·I는 개별 근거 검증 전까지 자동 충족으로 표시하지 않습니다.</p></section><footer class="footer">본 페이지는 투자 연구용이며 자동 주문이나 확정 매수 신호가 아닙니다. 분산일 3건 경계, 조정 판정 대리규칙은 BCI 가설입니다. KRX·증권사 데이터는 계약상 공개권한 확인 전 로컬 PC에서만 제공합니다.</footer></main><script src="./assets/common.js"></script><script>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>BCI ATLAS | CAN SLIM 시장 관제</title><link rel="stylesheet" href="./assets/atlas.css"></head><body><main class="wrap"><header class="top"><div><div class="eyebrow">BCIP · BUSINESS COMPANION INVESTMENT PARTNER</div><h1>CAN SLIM 종합 상황판</h1><div class="intro">기업 성장성과 코스피·코스닥 시장 추세를 한 화면에서 점검합니다. FTD 발생 전에는 미래 조건만, 발생 후에는 확인 기록을 표시합니다.</div></div><div class="buttons"><a class="btn ghost" href="./m_research.html">FTD·분산일 연구</a><button class="btn" type="button" id="pulseNow">오늘 지수·KRX·NXT 수급 새로고침</button><button class="btn ghost" type="button" id="updateNow">전 종목 KRX·RS 갱신</button><button class="btn ghost" type="button" id="caNow">재무 C/A 갱신 · 이어받기</button><button class="btn ghost" type="button" id="reload">화면 새로고침</button><a class="btn ghost" href="/admin">관리자</a></div></header><div id="navigation"></div><p><a class="btn" href="./rs_line.html">종목별 최근 1년 주가 · 거래량 · RS선 확인하기</a></p><div id="refreshPanel" class="panel bci-freshness"><div class="section-row"><b>데이터 기준일 · 수집 상태</b><span id="localClock" class="small">한국 시간 확인 중</span></div><div class="bci-dates" id="freshDates"></div><div class="small" id="refreshStatus" role="status" aria-live="polite">이 화면은 마지막 확정 일봉으로 표시됩니다. 장중 자료는 확정값으로 사용하지 않습니다.</div></div><div id="warning" class="warning compact" role="status">시장·기업 데이터를 읽고 있습니다.</div>
+<section class="blockgap"><div class="section-row"><h2>오늘의 시장 · 지수와 수급</h2><span class="small">각 시장의 실제 지수 기준일과 투자자별 수급 기준일을 따로 표시합니다.</span></div><div id="pulseCards" class="pulse-grid"><div class="panel">시장 지수를 확인하고 있습니다.</div></div><p class="small">※ 키움 ka10051 API의 거래소별 KRX / NXT / 통합을 별도로 조회합니다. 통합치는 API에서 직접 받아오며 금액 단위·시장별 범위·응답 날짜를 검증하기 전에는 잠정 원시값입니다. CSV 등록 방법은 패키지 안내문 참고.</p><p id="pulseStatus" class="small" role="status" aria-live="polite">로컬에 저장된 시장 수급을 확인합니다.</p></section>
+<section class="blockgap"><details class="pulse-details"><summary>M · FTD/분산일 상세 시장 관제 펼치기</summary><div class="section-row"><h2>M · 시장 방향 — 코스피와 코스닥</h2><a href="./m.html">상세 시장 관제 보기</a></div><div id="markets" class="marketgrid"></div><div id="mquality" class="mquality"></div><p class="small" id="mnote"></p></details></section><section class="blockgap"><div class="section-row"><h2>CAN SLIM 7개 항목</h2><span class="small">각 항목을 누르면 전체 기업의 해당 근거를 조회합니다.</span></div><div id="modules" class="modulegrid"></div></section><section class="blockgap panel"><div class="section-row"><h2>C·A·N 기업 관찰 요약</h2><a href="./matrix.html">2,675개 기업 조건표</a></div><div id="counts" class="kpi"></div><p class="small">C·A는 DART 정량 기준, N은 긍정 공시 제목 후보에 관한 BCI 간편 기준입니다. S·L·I는 개별 근거 검증 전까지 자동 충족으로 표시하지 않습니다.</p></section><footer class="footer">본 페이지는 투자 연구용이며 자동 주문이나 확정 매수 신호가 아닙니다. 분산일 3건 경계, 조정 판정 대리규칙은 BCI 가설입니다. KRX·증권사 데이터는 계약상 공개권한 확인 전 로컬 PC에서만 제공합니다.</footer></main><script src="./assets/common.js"></script><script>
 'use strict';el('navigation').innerHTML=nav('home');el('modules').innerHTML=BCI.factors.map(k=>'<a class="module" href="./'+k.toLowerCase()+'.html"><b>'+k+'</b><strong>'+BCI.names[k]+'</strong><small>'+BCI.descs[k]+'</small></a>').join('');
-async function load(){el('warning').textContent='자료를 확인 중입니다.';if(!BCI.local)el('markets').innerHTML='<div class="panel empty" style="grid-column:1/-1">'+mkNotice()+'</div>';else{try{const md=await market();el('markets').innerHTML=BCI.markets.map(k=>oneMarket(md.markets?.[k],k)).join('');el('mnote').innerHTML=fmtReason(md);if(md.cache_quality?.invalid_caches){const cq=md.cache_quality;el('mnote').textContent+=' · 과거 KRX 캐시 점검 '+cq.invalid_caches+'건(대체 원본 '+cq.replacement_ohlcv_dates+'건·날짜 확인 필요 '+cq.unresolved_dates+'건). 원본 캐시는 보존됩니다.';}if(md.m_history_review_required){el('mnote').textContent+=' · M 이력 검증 보류: 최근 90일 내 실제 거래일 여부가 확인되지 않은 캐시 날짜 존재';}if(md.risks?.length){el('warning').textContent='시장 데이터 점검 필요: '+md.risks.join(' · ');el('mquality').innerHTML='<div class="warning"><b>데이터 확인 필요:</b> '+escapeHtml(md.risks.join(' · '))+' · <a href="/admin">관리자에서 갱신하기</a></div>'}else if(md.m_history_review_required){el('mquality').innerHTML='<div class="info compact">지수 최신 데이터는 표시하지만 M 이력은 검증 보류입니다. <a href="/admin">관리자 진단</a>에서 과거 KRX 캐시의 실제 거래일 여부를 확인하세요.</div>';el('warning').textContent='최신 지수와 과거 M 신호 검증은 별개입니다. 과거 캐시 날짜 점검이 남았습니다.'}else{el('mquality').innerHTML='';el('warning').textContent='확정 일봉 기준 · 코스피/코스닥 별도 계산 · 공식 IBD 판정 아님'}}catch(e){el('markets').innerHTML='<div class="panel empty">M 로컬 자료 오류: '+escapeHtml(e.message)+'</div>';el('warning').textContent='시장 자료 미검증. 관리자 갱신 상태를 점검하세요.'}}try{const d=await finance();const rows=d.stocks||[];let z=[['전체 분석 종목',rows.length],['C 분기 성장',rows.filter(r=>r.c_status==='pass').length],['A 연간 성장',rows.filter(r=>r.a_status==='pass').length],['N 긍정 공시 후보',rows.filter(r=>r.n_quick_pass||r.n_status==='positive_candidate'||r.n_status==='mixed').length],['C·A 정량 동시',rows.filter(r=>r.c_status==='pass'&&r.a_status==='pass').length],['자료 생성 시각',d.updated_at||'—']];el('counts').innerHTML=z.map(([name,v])=>'<div><small>'+escapeHtml(name)+'</small><strong>'+escapeHtml(typeof v==='number'?fmt(v,0):v)+'</strong></div>').join('');if(!BCI.local)el('warning').textContent=mkNotice()}catch(e){el('counts').innerHTML='<div class="empty">재무자료 연결 실패: '+escapeHtml(e.message)+'</div>'}}
+async function load(){el('warning').textContent='자료를 확인 중입니다.';if(!BCI.local)el('markets').innerHTML='<div class="panel empty" style="grid-column:1/-1">'+mkNotice()+'</div>';else{try{const md=await market();el('markets').innerHTML=BCI.markets.map(k=>oneMarket(md.markets?.[k],k)).join('');lastPulseMarket=md;renderPulseCards();el('mnote').innerHTML=fmtReason(md);if(md.cache_quality?.invalid_caches){const cq=md.cache_quality;el('mnote').textContent+=' · 과거 KRX 캐시 점검 '+cq.invalid_caches+'건(대체 원본 '+cq.replacement_ohlcv_dates+'건·날짜 확인 필요 '+cq.unresolved_dates+'건). 원본 캐시는 보존됩니다.';}if(md.m_history_review_required){el('mnote').textContent+=' · M 이력 검증 보류: 최근 90일 내 실제 거래일 여부가 확인되지 않은 캐시 날짜 존재';}if(md.risks?.length){el('warning').textContent='시장 데이터 점검 필요: '+md.risks.join(' · ');el('mquality').innerHTML='<div class="warning"><b>데이터 확인 필요:</b> '+escapeHtml(md.risks.join(' · '))+' · <a href="/admin">관리자에서 갱신하기</a></div>'}else if(md.m_history_review_required){el('mquality').innerHTML='<div class="info compact">지수 최신 데이터는 표시하지만 M 이력은 검증 보류입니다. <a href="/admin">관리자 진단</a>에서 과거 KRX 캐시의 실제 거래일 여부를 확인하세요.</div>';el('warning').textContent='최신 지수와 과거 M 신호 검증은 별개입니다. 과거 캐시 날짜 점검이 남았습니다.'}else{el('mquality').innerHTML='';el('warning').textContent='확정 일봉 기준 · 코스피/코스닥 별도 계산 · 공식 IBD 판정 아님'}}catch(e){el('markets').innerHTML='<div class="panel empty">M 로컬 자료 오류: '+escapeHtml(e.message)+'</div>';el('warning').textContent='시장 자료 미검증. 관리자 갱신 상태를 점검하세요.'}}try{const d=await finance();const rows=d.stocks||[];let z=[['전체 분석 종목',rows.length],['C 분기 성장',rows.filter(r=>r.c_status==='pass').length],['A 연간 성장',rows.filter(r=>r.a_status==='pass').length],['N 긍정 공시 후보',rows.filter(r=>r.n_quick_pass||r.n_status==='positive_candidate'||r.n_status==='mixed').length],['C·A 정량 동시',rows.filter(r=>r.c_status==='pass'&&r.a_status==='pass').length],['자료 생성 시각',d.updated_at||'—']];el('counts').innerHTML=z.map(([name,v])=>'<div><small>'+escapeHtml(name)+'</small><strong>'+escapeHtml(typeof v==='number'?fmt(v,0):v)+'</strong></div>').join('');if(!BCI.local)el('warning').textContent=mkNotice()}catch(e){el('counts').innerHTML='<div class="empty">재무자료 연결 실패: '+escapeHtml(e.message)+'</div>'}}
 const kstClock=()=>new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',dateStyle:'long',timeStyle:'medium'}).format(new Date());
-let latestMarketDates={};
+let latestMarketDates={};let lastPulseMarket=null,lastPulseFlow={markets:{}},lastNaverMarket={markets:{}},lastVenueFlow={markets:{}};
 async function refreshFreshness(){
  el('localClock').textContent='한국 시간 '+kstClock();
  if(!BCI.local){el('freshDates').innerHTML='<span>공개 사이트: 로컬 시세 갱신 불가</span>';el('updateNow').disabled=true;el('refreshStatus').textContent='개별 시세는 PC 로컬 화면에서 갱신해 주세요.';return}
@@ -13,9 +15,9 @@ async function refreshFreshness(){
   el('freshDates').innerHTML=[
    ['KOSPI·KOSDAQ 확정 지수',latestMarketDates.KOSPI&&latestMarketDates.KOSDAQ?fmtDate(latestMarketDates.KOSPI)+' / '+fmtDate(latestMarketDates.KOSDAQ):fmtDate(di.latest_market_ohlcv_csv_date)],
    ['종목 RS 원본',fmtDate(di.latest_rs_csv_date)],['KRX 로컬 캐시',fmtDate(di.latest_cache_date)],
-   ['현재 확정 데이터 예상일',fmtDate(di.expected_final_trading_date)]
+   ['오늘 API 조회 목표일 (확정 아님)',fmtDate(di.expected_final_trading_date)]
   ].map(([label,value])=>'<div><small>'+escapeHtml(label)+'</small><b>'+escapeHtml(value||'—')+'</b></div>').join('');
-  el('updateNow').disabled=!!(st.refresh_running||st.ca_running);el('caNow').disabled=!!(st.refresh_running||st.ca_running);
+  el('updateNow').disabled=!!(st.refresh_running||st.ca_running);el('caNow').disabled=!!(st.refresh_running||st.ca_running);const ps=await json('/api/market_pulse_status');el('pulseNow').disabled=!!(ps.market_pulse_running||st.refresh_running||st.ca_running);
   let detail=st.refresh_result?.krx;
   if(st.ca_running&&!st.refresh_running)el('refreshStatus').textContent='DART C/A 재무 수집 진행 중 · '+(st.ca_message||'수집 중');
   else if(st.refresh_running)el('refreshStatus').textContent='수집 진행 중 · '+(st.message||'KRX 확인 중')+' · 화면 기준일은 성공한 자료만 변경됩니다.';
@@ -30,7 +32,7 @@ async function refreshFreshness(){
 }
 async function refreshView(){
  await load();try{const md=await market();latestMarketDates=Object.fromEntries(BCI.markets.map(k=>[k,md.markets?.[k]?.last_date||'']));}catch(e){};
- await refreshFreshness();
+ await refreshFreshness();await refreshPulseFlow();
 }
 el('updateNow').onclick=async()=>{
  if(!BCI.local){return}
@@ -62,4 +64,65 @@ el('caNow').onclick=async()=>{
 };
 el('reload').onclick=refreshView;refreshView();
 
+
+function fmtAmountRaw(v){return v==null?'—':(v>0?'+':'')+fmt(v,0)}
+function renderPulseCards(){
+ if(!BCI.local){el('pulseCards').innerHTML='<div class="panel">시장 종합 수급은 로컬 PC에서만 표시합니다.</div>';return}
+ const data=lastPulseMarket?.markets||{};
+ el('pulseCards').innerHTML=BCI.markets.map(m=>{
+   const d=data[m]||{},last=(d.history||[]).at(-1)||{};
+   const kdate=d.last_date||'',nquote=lastNaverMarket.markets?.[m];
+   const useNaver=!!(nquote?.date&&nquote?.close&&(!kdate||nquote.date>kdate));
+   const asof=useNaver?nquote.date:kdate,price=useNaver?nquote.close:(d.last_close??last.close);
+   const pctValue=useNaver?(nquote.pct==null?null:Number(nquote.pct)):(last.pct!=null&&Number.isFinite(Number(last.pct))?Number(last.pct):null);
+   const change=useNaver?(nquote.change??(pctValue!=null&&price!=null?Number(price)-Number(price)/(1+pctValue/100):null)):(pctValue!=null&&price!=null?Number(price)-Number(price)/(1+pctValue/100):null);
+   const flow=lastPulseFlow.markets?.[m],newsFlow=lastNaverMarket.news_flows?.[m];
+   const venue=lastVenueFlow.markets?.[m]||{};
+   const keys=[['개인','individual'],['외국인','foreign'],['기관','institution']];
+   const matched=v=>v&&v.date===asof&&v.amounts&&Object.values(v.amounts).every(x=>Number.isFinite(Number(x))); 
+   const flowTable=['KRX','NXT','TOTAL'].map(loc=>{
+     const entry=venue[loc],good=matched(entry),label=loc==='TOTAL'?'KRX+NXT':loc;
+     return '<tr><th>'+label+(good?'<small class="venue-unit">'+escapeHtml((entry.unit==='억원'?'억원':'원시값 · 단위 확인 전')+(entry.date_verified===false?' / API 응답일 미확인':''))+'</small>':'')+'</th>'+keys.map(([_,k])=>'<td class="'+(good&&entry.amounts[k]>0?'positive':good&&entry.amounts[k]<0?'negative':'')+'">'+(good?(entry.amounts[k]>0?'+':'')+fmt(entry.amounts[k],2):'—')+'</td>').join('')+'</tr>';
+   }).join('');
+   const verifiedCount=['KRX','NXT'].filter(v=>matched(venue[v])).length;
+   const scopeMsg=matched(venue.TOTAL)?'키움 API 통합 구분 별도 조회 · 합산 자체 계산 아님 · NXT 20시 종료 전 잠정 가능':verifiedCount?'거래소별 일부 조회 완료 · 통합값 API 제공 대기':'거래소별 응답 미확인 · 미확인값은 표시하지 않음';
+   const legacy=flow?.amounts_raw?'키움 시장 수급 조회는 날짜/금액 단위 추가 검증 중':'';
+   const newsroom=newsFlow?.date===asof?' · 언론 집계 수급 참고(거래소별 분리 근거 아님)':'';
+   return '<article class="panel pulse-market">'+
+     '<div class="pulse-market-head"><strong>'+escapeHtml(m)+'</strong><span>'+escapeHtml(dateFmt(asof)||'기준일 없음')+' · '+(useNaver?'네이버/보도 시황':'KRX 지수')+'</span></div>'+
+     '<div class="pulse-quote">'+(price==null?'—':fmt(price,2))+' <small>pt</small></div>'+
+     '<div class="pulse-change '+(pctValue>=0?'positive':'negative')+'">'+(change==null?'전일 대비 확인 불가':(change>=0?'+':'')+fmt(change,2)+'pt')+'　'+(pctValue==null?'—':(pctValue>=0?'+':'')+fmt(pctValue,2)+'%')+'</div>'+
+     '<div class="pulse-divider"></div><div class="pulse-subtitle">거래소별 순매수 <small>개인 / 외국인 / 기관 · 단위 및 수급 기준일 검증 필요</small></div>'+
+     '<div class="venue-scroll"><table class="venue-flow-table"><thead><tr><th>집계 거래소</th>'+keys.map(([k])=>'<th>'+k+'</th>').join('')+'</tr></thead><tbody>'+flowTable+'</tbody></table></div>'+
+     '<div class="pulse-fresh">'+escapeHtml(scopeMsg+newsroom)+'</div>'+
+     '<div class="pulse-source">'+escapeHtml(legacy)+' · <a href="https://nextrade.co.kr/menu/transactionStatusInvestorEtf/menuList.do" target="_blank" rel="noopener noreferrer">NXT 공식 투자자 통계</a> · <a href="https://data.krx.co.kr/" target="_blank" rel="noopener noreferrer">KRX 공식 통계</a></div>'+
+     '</article>';
+ }).join('');
+}
+async function refreshPulseFlow(){
+ if(!BCI.local)return renderPulseCards();
+ try{
+  const [f,n,v]=await Promise.all([json('/api/market_flow'),json('/api/naver_market'),json('/api/venue_flow')]);lastPulseFlow=f;lastNaverMarket=n;lastVenueFlow=v;renderPulseCards();
+  el('pulseStatus').textContent=(v.message||'키움 거래소별 수급 조회 상태')+' · 키움 ka10051 KRX/NXT/통합 조회'+(Object.keys(v.errors||{}).length?' · 미확인 '+Object.keys(v.errors).length+'건: '+Object.entries(v.errors).slice(0,2).map(([k,e])=>k+' '+e).join(' / '):'')+' · NXT는 오후 8시 장 종료 전 수치가 바뀔 수 있습니다.';
+ }catch(e){el('pulseStatus').textContent='시장 수급 로컬 조회 실패: '+e.message}
+}
+el('pulseNow').onclick=async()=>{
+ if(!BCI.local)return;
+ el('pulseNow').disabled=true;
+ el('pulseStatus').textContent='네이버 날짜 검증된 당일 지수 → KRX 확인 → 키움 전체 시장 수급 순서로 조회 중';
+ try{
+  const r=await fetch('/api/market_pulse_refresh',{method:'POST',headers:{'Content-Type':'application/json','X-BCI-Key':'__CSRF__'},body:'{}',cache:'no-store'});
+  const d=await r.json();if(!r.ok)throw Error(d.error||'시황 갱신 시작 실패');
+  let tries=0;
+  const watch=async()=>{
+   const s=await json('/api/market_pulse_status');
+   if(s.market_pulse_running&&tries++<90){el('pulseStatus').textContent=s.market_pulse_message||'시장 조회 중';setTimeout(watch,1600);return}
+   await refreshView();
+   const idx=s.market_pulse_result?.index,inv=s.market_pulse_result?.investor;
+   el('pulseStatus').textContent=[s.market_pulse_result?.naver?.message,idx?.message,inv?.message,inv?.status==='updated'?'시장 수급 조회 저장 완료':null,s.market_pulse_error].filter(Boolean).join(' · ')||'지수·수급 조회 결과를 확인하세요';
+   el('pulseNow').disabled=false;
+  };
+  setTimeout(watch,1000);
+ }catch(e){el('pulseStatus').textContent='오늘 시황 갱신 실패: '+e.message;el('pulseNow').disabled=false}
+};
 </script></body></html>
